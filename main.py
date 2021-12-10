@@ -1,4 +1,9 @@
 import discord
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+TOKEN = os.getenv('TOKEN')
 
 intents = discord.Intents(members=True,messages=True, guilds=True)
 client=discord.Client(intents=intents)
@@ -27,4 +32,4 @@ async def on_member_leave(member):
     print("Recognised that a member called " + member.name + " left")
 
 
-client.run('OTE4NTU1NTcwMzE3OTU5MTY5.YbI9iQ.qG9tdX9FHx4mav-5V1JpbUAcvuI')
+client.run(TOKEN)
